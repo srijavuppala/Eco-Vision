@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1000 Applications</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="container" style="max-width: 900px; margin: 0 auto">
+      <div class="stack">
+        <div class="card stack">
+          <div class="row">
+            <div>
+              <div class="title" style="font-size: 18px">1000 Applications</div>
+              <div class="muted">New tab snapshot</div>
+            </div>
+            <a class="muted" href="dashboard.html" target="_blank" rel="noreferrer">Dashboard</a>
+          </div>
+          <div class="row">
+            <div>
+              <div class="muted">Progress</div>
+              <div id="progressText" class="title">0 / 1000 (0%)</div>
+            </div>
+            <div class="pill"><span id="streakText">0</span> day streak</div>
+            <div class="pill">This week: <span id="weekText">0</span></div>
+          </div>
+          <div class="progress"><div id="progressBar"></div></div>
+          <div class="row">
+            <div class="muted" id="milestoneText"></div>
+            <a class="muted" href="dashboard.html" target="_blank" rel="noreferrer">Manage applications</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="newtab.js"></script>
+  </body>
+</html>
+

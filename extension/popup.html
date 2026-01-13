@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1000 Applications</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="container" style="width: 360px">
+      <div class="stack">
+        <div class="card stack">
+          <div class="row">
+            <div class="title">1000 Applications</div>
+            <a class="muted" href="dashboard.html" target="_blank" rel="noreferrer">Dashboard</a>
+          </div>
+          <div class="row">
+            <div>
+              <div class="muted">Progress</div>
+              <div id="progressText" class="title">0 / 1000 (0%)</div>
+            </div>
+            <div class="pill"><span id="streakText">0</span> day streak</div>
+          </div>
+          <div class="progress"><div id="progressBar"></div></div>
+          <div class="row">
+            <div class="muted">This week: <span id="weekText">0</span></div>
+            <div class="muted" id="milestoneText"></div>
+          </div>
+        </div>
+
+        <div class="card stack">
+          <div class="row">
+            <div class="title">Quick Add</div>
+            <button id="logPage" type="button">Log This Page</button>
+          </div>
+
+          <div class="grid2">
+            <div>
+              <label for="company">Company*</label>
+              <input id="company" placeholder="e.g. Stripe" />
+            </div>
+            <div>
+              <label for="role">Role*</label>
+              <input id="role" placeholder="e.g. Product Analyst" />
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div>
+              <label for="appliedDate">Date applied</label>
+              <input id="appliedDate" type="date" />
+            </div>
+            <div>
+              <label for="status">Status</label>
+              <select id="status"></select>
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div>
+              <label for="platform">Platform</label>
+              <select id="platform"></select>
+            </div>
+            <div>
+              <label for="location">Location</label>
+              <input id="location" placeholder="Optional" />
+            </div>
+          </div>
+
+          <div>
+            <label for="url">Job link</label>
+            <input id="url" placeholder="Optional" />
+          </div>
+
+          <div>
+            <label for="notes">Notes</label>
+            <textarea id="notes" placeholder="Optional"></textarea>
+          </div>
+
+          <div class="row">
+            <button id="save" class="primary" type="button">Add Application</button>
+            <button id="openSettings" class="link" type="button">Goal</button>
+          </div>
+
+          <div id="message" class="muted" style="min-height: 16px"></div>
+        </div>
+
+        <div class="card stack">
+          <div class="row">
+            <div class="title">Recent</div>
+          </div>
+          <div id="recent" class="stack" style="gap: 8px"></div>
+        </div>
+      </div>
+    </div>
+
+    <dialog id="settingsDialog">
+      <form method="dialog" class="stack" style="padding: 12px">
+        <div class="row">
+          <div class="title">Settings</div>
+          <button value="cancel" type="submit">Close</button>
+        </div>
+        <div>
+          <label for="goalNumber">Goal number</label>
+          <input id="goalNumber" type="number" min="1" step="1" />
+          <div class="muted">Default: 1000</div>
+        </div>
+        <div class="row">
+          <button id="saveSettings" class="primary" type="button">Save</button>
+          <button id="export" type="button">Export</button>
+          <input id="importFile" type="file" accept="application/json" style="display:none" />
+          <button id="import" type="button">Import</button>
+        </div>
+        <div id="settingsMessage" class="muted" style="min-height: 16px"></div>
+      </form>
+    </dialog>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
+

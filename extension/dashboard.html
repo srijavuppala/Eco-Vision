@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1000 Applications — Dashboard</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="container" style="max-width: 1100px; margin: 0 auto">
+      <div class="stack">
+        <div class="row">
+          <div>
+            <div class="title" style="font-size: 18px">Dashboard</div>
+            <div class="muted">Progress builds confidence. Consistency matters.</div>
+          </div>
+          <div class="row">
+            <a class="muted" href="popup.html" target="_blank" rel="noreferrer">Open popup</a>
+          </div>
+        </div>
+
+        <div class="card stack">
+          <div class="row">
+            <div>
+              <div class="muted">Progress</div>
+              <div id="progressText" class="title">0 / 1000 (0%)</div>
+            </div>
+            <div class="pill"><span id="streakText">0</span> day streak</div>
+            <div class="pill">This week: <span id="weekText">0</span></div>
+            <div class="pill" id="milestoneText"></div>
+          </div>
+          <div class="progress"><div id="progressBar"></div></div>
+        </div>
+
+        <div class="card stack">
+          <div class="row">
+            <div class="title">Filters</div>
+            <div class="row">
+              <button id="export" type="button">Export</button>
+              <input id="importFile" type="file" accept="application/json" style="display:none" />
+              <button id="import" type="button">Import</button>
+            </div>
+          </div>
+          <div class="grid2">
+            <div>
+              <label for="q">Search</label>
+              <input id="q" placeholder="Company or role keyword" />
+            </div>
+            <div>
+              <label for="status">Status</label>
+              <select id="status"></select>
+            </div>
+          </div>
+          <div class="grid2">
+            <div>
+              <label for="platform">Platform</label>
+              <select id="platform"></select>
+            </div>
+            <div>
+              <label for="company">Company</label>
+              <input id="company" placeholder="Exact match optional" />
+            </div>
+          </div>
+          <div class="grid2">
+            <div>
+              <label for="from">From</label>
+              <input id="from" type="date" />
+            </div>
+            <div>
+              <label for="to">To</label>
+              <input id="to" type="date" />
+            </div>
+          </div>
+          <div class="row">
+            <button id="clear" type="button">Clear</button>
+            <div id="message" class="muted" style="min-height:16px"></div>
+          </div>
+        </div>
+
+        <div class="card stack">
+          <div class="row">
+            <div class="title">Applications</div>
+            <div class="muted" id="countText"></div>
+          </div>
+          <div style="overflow:auto">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="nowrap">Date</th>
+                  <th>Company</th>
+                  <th>Role</th>
+                  <th class="nowrap">Status</th>
+                  <th class="nowrap">Platform</th>
+                  <th>Link</th>
+                  <th class="nowrap">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <dialog id="editDialog">
+      <form method="dialog" class="stack" style="padding: 12px; width: min(720px, 92vw)">
+        <div class="row">
+          <div class="title">Edit</div>
+          <button value="cancel" type="submit">Close</button>
+        </div>
+        <div class="grid2">
+          <div>
+            <label for="e_company">Company*</label>
+            <input id="e_company" />
+          </div>
+          <div>
+            <label for="e_role">Role*</label>
+            <input id="e_role" />
+          </div>
+        </div>
+        <div class="grid2">
+          <div>
+            <label for="e_appliedDate">Date applied</label>
+            <input id="e_appliedDate" type="date" />
+          </div>
+          <div>
+            <label for="e_status">Status</label>
+            <select id="e_status"></select>
+          </div>
+        </div>
+        <div class="grid2">
+          <div>
+            <label for="e_platform">Platform</label>
+            <select id="e_platform"></select>
+          </div>
+          <div>
+            <label for="e_location">Location</label>
+            <input id="e_location" />
+          </div>
+        </div>
+        <div>
+          <label for="e_url">Job link</label>
+          <input id="e_url" />
+        </div>
+        <div>
+          <label for="e_notes">Notes</label>
+          <textarea id="e_notes"></textarea>
+        </div>
+        <div class="row">
+          <button id="save" class="primary" type="button">Save</button>
+          <button id="del" class="danger" type="button">Delete</button>
+          <div id="editMessage" class="muted" style="min-height:16px"></div>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="dashboard.js"></script>
+  </body>
+</html>
+
